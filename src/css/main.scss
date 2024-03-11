@@ -1,0 +1,92 @@
+$mainBg: #20272a;
+$navBg: #1d2226;
+$inputBg: #3c6862;
+$btnBg: #184b43;
+* {
+  font-family: monospace;
+}
+
+.app {
+  height: 100vh;
+  background: $mainBg;
+  color: white;
+  overflow: scroll;
+
+  .btn {
+    border: none;
+    font-size: 1.2em;
+    margin: 1px;
+    padding: 10px;
+    border-radius: 20px;
+    height: 40px;
+    width: 60px;
+    background: $btnBg;
+    color: white;
+    font-weight: 700;
+    cursor: pointer;
+    &:focus {
+      outline: none;
+    }
+    &:hover {
+      opacity: 0.9;
+    }
+  }
+  nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: $navBg;
+    min-height: 60px;
+    padding: 10px;
+    a {
+      color: white;
+    }
+  }
+  .todos-container {
+    padding: 20px 10px;
+    .todo-form {
+      .input-item {
+        input {
+          padding: 10px;
+          border-radius: 20px;
+          border: none;
+          background: $inputBg;
+          margin-right: 10px;
+          color: white;
+          font-size: 1.2em;
+          min-width: 300px;
+        }
+      }
+    }
+    .todos {
+      padding-top: 30px;
+      .todo-item {
+        padding: 5px 10px;
+        background: $inputBg;
+        margin: 10px 0;
+        border-radius: 50px;
+        width: 300px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+    }
+  }
+  .todones-container {
+    padding: 10px;
+    .todones-item {
+      padding: 5px 10px;
+      background: $inputBg;
+      margin: 10px 0;
+      border-radius: 50px;
+      width: 300px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      p {
+        text-decoration: line-through;
+        opacity: 0.5;
+      }
+    }
+  }
+}
