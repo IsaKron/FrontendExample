@@ -4,8 +4,7 @@ import Navigation from "./components/Navigation.jsx";
 import ToDosContainer from "./components/ToDosContainer.jsx";
 import DonesContainer from "./components/DonesContainer.jsx";
 
-// const URI = "http://localhost:3000/tasks";
-const URI = "https://backendexample-sakg.onrender.com/tasks";
+const URI = "http://localhost:3000/tasks";
 
 function App() {
 
