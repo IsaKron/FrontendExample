@@ -12,7 +12,9 @@ function App() {
   const [items, setItems] = useState([]);
 
   useEffect(() => {
-    fetch(URI)
+    fetch(URI, {
+      credentials: "include",
+    })
       .then((response) => response.json())
       .then((data) => setItems(data))
       .catch((error) => console.error(error));
@@ -27,6 +29,7 @@ function App() {
         "Content-Type": "application/json",
       },
       body: JSON.stringify(newTask),
+      credentials: "include",
     })
       .then((response) => response.json())
       .then((data) => setItems([data, ...items]))
@@ -43,6 +46,7 @@ function App() {
         "Content-Type": "application/json",
       },
       body: JSON.stringify(updatedTask),
+      credentials: "include",
     })
       .then((response) => response.json())
       .then(() => {
@@ -57,6 +61,7 @@ function App() {
   const deleteItem = (id) => {
     fetch(URI + `/${id}`, {
       method: "DELETE",
+      credentials: "include",
     })
       .then(() => {
         fetch(URI)
@@ -65,17 +70,20 @@ function App() {
           .catch((error) => console.error(error));
       })
       .catch((error) => console.error(error));
-  };
-
-  const toDos = items.filter((el) => !el.done);
-  const toDones = items.filter((el) => el.done);
+      };
 
   const getCookie = () => {
-    fetch(`https://backendexample-7msy.onrender.com/getCookie`)
+    fetch(`https://backendexample-7msy.onrender.com/getCookie`, {
+      credentials: "include",
+    })
       .then((response) => response.json())
       .then((data) => setItems(data))
       .catch((error) => console.error(error));
   }
+
+  const toDos = items.filter((el) => !el.done);
+  const toDones = items.filter((el) => el.done);
+
 
   return (
     <div className="app">
