@@ -70,8 +70,16 @@ function App() {
   const toDos = items.filter((el) => !el.done);
   const toDones = items.filter((el) => el.done);
 
+  const getCookie = () => {
+    fetch(URI + `/getCookie`)
+      .then((response) => response.json())
+      .then((data) => setItems(data))
+      .catch((error) => console.error(error));
+  }
+
   return (
     <div className="app">
+      <button onClick={getCookie}>Get Cookie</button>
       <Navigation></Navigation>
       <ToDosContainer
         items={toDos}
