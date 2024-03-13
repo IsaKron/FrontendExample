@@ -71,7 +71,7 @@ function App() {
   const toDones = items.filter((el) => el.done);
 
   const getCookie = () => {
-    fetch(URI + `/getCookie`)
+    fetch(`https://backendexample-7msy.onrender.com/getCookie`)
       .then((response) => response.json())
       .then((data) => setItems(data))
       .catch((error) => console.error(error));
